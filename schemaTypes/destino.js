@@ -1,5 +1,3 @@
-// schemas/destino.js
-
 export default {
   name: 'destino',
   title: 'Destino',
@@ -43,13 +41,12 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Patagonia', value: 'Patagonia' },
-          { title: 'Cuyo', value: 'Cuyo' },
-          { title: 'Noroeste', value: 'Noroeste' },
-          { title: 'Litoral', value: 'Litoral' },
-          { title: 'Centro', value: 'Centro' },
-          { title: 'Noreste', value: 'Noreste' },
-
+          { title: 'Patagonia', value: 'patagonia' },
+          { title: 'Cuyo', value: 'cuyo' },
+          { title: 'Noroeste', value: 'noroeste' },
+          { title: 'Litoral', value: 'litoral' },
+          { title: 'Centro', value: 'centro' },
+          { title: 'Noreste', value: 'noreste' },
         ],
       },
     },
@@ -80,6 +77,45 @@ export default {
         ],
         layout: 'checkbox',
       },
+    },
+    {
+      name: 'categorias',
+      title: 'Categorías del Paquete',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Relax', value: 'relax' },
+          { title: 'Aventura', value: 'aventura' },
+          { title: 'Familia', value: 'familia' },
+          { title: 'Descanso', value: 'descanso' },
+        ],
+        layout: 'checkbox',
+      },
+    },
+    {
+      name: 'pension',
+      title: 'Tipo de Pensión',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'All Inclusive', value: 'all-inclusive' },
+          { title: 'Media pensión', value: 'media-pension' },
+          { title: 'Pensión completa', value: 'pension-completa' },
+          { title: 'Solo alojamiento', value: 'solo-alojamiento' },
+        ],
+      },
+    },
+    {
+      name: 'enPromocion',
+      title: '¿Está en Promoción?',
+      type: 'boolean',
+    },
+    {
+      name: 'activo',
+      title: '¿Paquete activo?',
+      type: 'boolean',
+      description: 'Si está desactivado, aparecerá como "Agotado" en la web.',
     },
   ],
 };
